@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.app.controller.MainScreenController">
+    <top>
+        <VBox spacing="0" alignment="CENTER">
+            <Label text="System Zarządzania Uprawą"
+                   style="-fx-background-color: #1a237e; -fx-text-fill: white; -fx-font-size: 24px; -fx-padding: 16px;"
+                   maxWidth="1.7976931348623157E308" />
+            <Label fx:id="statusLabel" text="Wyłączony"
+                   style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 8px;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="12" style="-fx-padding: 35 35 35 35;">
+            <Label text="Panel sterowania" style="-fx-font-size: 20px;"/>
+            <Label text="Wybierz jedną z dostępnych opcji, aby zarządzać systemem."/>
+            <FlowPane hgap="10" vgap="10" alignment="CENTER" prefWrapLength="500">
+                <Button text="Dodaj nawóz" onAction="#onAddFertilizer" style="-fx-text-fill: white; -fx-background-color: #2196F3;"/>
+                <Button text="Historia nawożenia" onAction="#onShowHistory" style="-fx-text-fill: white; -fx-background-color: #2196F3;"/>
+                <Button text="Dodaj odmianę do kwatery" onAction="#onAddVariety" style="-fx-text-fill: white; -fx-background-color: #2196F3;"/>
+                <Button text="Pokaż dozowniki" onAction="#onShowDispensersByFertilizer" style="-fx-text-fill: white; -fx-background-color: #2196F3;"/>
+                <Button text="Włącz system" onAction="#onEnableSystem" style="-fx-text-fill: white; -fx-background-color: #2196F3;"/>
+                <Button text="Wyłącz system" onAction="#onDisableSystem" style="-fx-text-fill: white; -fx-background-color: #2196F3;"/>
+            </FlowPane>
+            <ScrollPane fx:id="logScroll" fitToWidth="true" prefViewportHeight="200">
+                <content>
+                    <VBox fx:id="dynamicPanel" spacing="5" style="-fx-padding: 10;"/>
+                </content>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+</BorderPane>
